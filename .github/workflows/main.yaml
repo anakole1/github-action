@@ -19,7 +19,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Test
         run: go test ./microservice
-       
+        
   docker:
     needs: test
     runs-on: ubuntu-latest
@@ -37,5 +37,3 @@ jobs:
         tags: anakole/helloserver:latest
     - name: Image digest
       run: echo ${{ steps.docker_build.outputs.digest }}
-
-	
